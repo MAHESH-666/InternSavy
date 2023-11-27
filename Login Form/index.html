@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    
+      margin: 0;
+      padding: 0;
+      display: flex;
+      margin: auto;
+      padding: 50px;
+    
+      justify-content: center;
+      align-items: center;
+      height: 120vh;
+      background-color: rgb(202, 186, 186);
+      
+    }
+
+    form {
+      background-color: rgb(202, 186, 186);;
+      padding: 20px;
+      border-radius: 30% 0 30%;
+      box-shadow: 0px 0px 60px rgb(32, 11, 11);
+      width: 700px;
+     
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.5rem;
+      font-style: italic;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border-radius: 20px 0 20px;
+      border-color: rgb(21, 87, 179);
+      box-shadow: 0 0 2px;
+      font-style: italic;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #3c2faf;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 120px;
+    }
+
+    button:hover {
+      background-color: rgb(221, 41, 41);
+    }
+    h1{
+        color: rgb(234, 34, 34);
+        display: flex;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 2.5rem;
+        text-align: center;
+        justify-content: center;
+        font-style: italic;
+    }
+   #state{
+  width: 480px;;
+   }
+   #sb{
+    font-size: 1.5rem;
+    width: 160px;
+   }
+  </style>
+</head>
+<body>
+    
+
+  <form id="contactForm" onsubmit="submitForm(event)">
+
+    <h1> &nbsp; &nbsp; Login Form</h1>
+    <label for="firstName">&nbsp; First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required>
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required>
+
+    <label for="state">State:</label>
+    <input type="text" id="state" name="state" required>
+<br>
+    <button type="submit" id="sb">Submit</button>
+  </form>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+
+      var firstName = document.getElementById('firstName').value;
+      var lastName = document.getElementById('lastName').value;
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+      var gender = document.getElementById('gender').value;
+      var city = document.getElementById('city').value;
+      var state = document.getElementById('state').value;
+
+      if (
+        firstName.trim() === '' || lastName.trim() === '' || email.trim() === '' ||
+        password.trim() === '' || confirmPassword.trim() === '' || address.trim() === '' ||
+        gender.trim() === '' || city.trim() === '' || state.trim() === ''
+      ) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match');
+        return;
+      }
+      alert('Form submitted successfully!');
+    }
+  </script>
+
+</body>
+</html>
